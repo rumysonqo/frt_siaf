@@ -12,7 +12,8 @@
              option-value="codigo"
              label="Fuentes"
              style="min-width: 450px; max-width: 600px"
-             @change="get_rep_prg_fte()" />
+             @update:model-value="get_rep_prg_fte()"
+             />
           </div>
         </div>
     </div>
@@ -42,6 +43,11 @@
 
 
 <script>
+
+
+
+
+
 import axios from "axios";
 let url='http://localhost:3001/api/';
 export default{
@@ -52,18 +58,19 @@ export default{
         descending: false,
         page: 1,
         rowsPerPage: 10
-      },
+      }
     }
   },
   mounted(){
-    this.get_rep_prg_fte();
     this.get_fuentes();
+    this.get_rep_prg_fte();
+
   },
   data(){
     return{
       sepa:'cell',
-      cod_fte:'',
       ds_fuentes:[],
+      cod_fte:null,
       ds_datos:[],
       ds_titulo: [
       { name: 'programa', align: 'left', label: 'PROGRAMA', field: 'programa', sortable: true, headerStyle: {fontSize: '1.2em'},style: {fontSize: '1em'}},
@@ -80,13 +87,25 @@ export default{
 
   methods:{
     async get_rep_prg_fte(){
+      if(this.cod_fte==null){
+      try {
+            let datos=await axios.get(url+'rep_prog_fte/1')
+          this.ds_datos= await datos.data;
+          console.log("codigo de fuente:"+this.cod_fte['codigo']);
+      } catch (error) {
+          console.log(error);
+      }
+      }else{
         try {
-            let datos=await axios.get(url+'rep_prog_fte/'+this.cod_fte)
+              let datos=await axios.get(url+'rep_prog_fte/'+this.cod_fte['codigo'])
             this.ds_datos= await datos.data;
-            console.log(this.cod_fte);
+            console.log("codigo de fuente:"+this.cod_fte['codigo']);
         } catch (error) {
             console.log(error);
         }
+
+      }
+
     },
     async get_fuentes(){
         try {
