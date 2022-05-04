@@ -91,7 +91,6 @@ export default{
       try {
             let datos=await axios.get(url+'rep_prog_fte/1')
           this.ds_datos= await datos.data;
-          console.log("codigo de fuente:"+this.cod_fte['codigo']);
       } catch (error) {
           console.log(error);
       }
@@ -99,7 +98,6 @@ export default{
         try {
               let datos=await axios.get(url+'rep_prog_fte/'+this.cod_fte['codigo'])
             this.ds_datos= await datos.data;
-            console.log("codigo de fuente:"+this.cod_fte['codigo']);
         } catch (error) {
             console.log(error);
         }

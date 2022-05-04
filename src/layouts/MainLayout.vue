@@ -9,7 +9,7 @@
           <q-avatar>
             <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
           </q-avatar>
-          Title
+          Ejecución Presupuestal 2022 Red Cusco Norte
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
@@ -24,7 +24,7 @@
       >
         <q-scroll-area class="fit">
           <q-list padding class="menu-list">
-            <q-item clickable v-ripple to='about'>
+            <q-item clickable v-ripple to='/'>
               <q-item-section avatar>
                 <q-icon name="home" size="32px" />
               </q-item-section>
