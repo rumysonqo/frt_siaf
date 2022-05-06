@@ -44,13 +44,13 @@
               </q-item-section>
             </q-item>
 
-            <q-item clickable v-ripple>
+            <q-item clickable v-ripple to="generica">
               <q-item-section avatar>
-                <q-icon name="send" />
+                <q-icon name="dataset_linked" />
               </q-item-section>
 
               <q-item-section>
-                Send
+                Por generica
               </q-item-section>
             </q-item>
 
