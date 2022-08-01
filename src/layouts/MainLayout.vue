@@ -50,7 +50,17 @@
               </q-item-section>
 
               <q-item-section>
-                Por generica
+                Por generica de gasto
+              </q-item-section>
+            </q-item>
+
+            <q-item clickable v-ripple to="programa">
+              <q-item-section avatar>
+                <q-icon name="dataset_linked" />
+              </q-item-section>
+
+              <q-item-section>
+                Por programa presupuestal
               </q-item-section>
             </q-item>
 

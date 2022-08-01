@@ -9,7 +9,7 @@
              :options="ds_gen"
              option-label="generica"
              option-value="codigo"
-             label="Genericas de Gasto"
+             label="Programa Presupuestal"
              style="min-width: 450px; max-width: 600px"
              @update:model-value="get_totales_gen(), get_ejec_fte_gen()"
              />
@@ -407,7 +407,7 @@ export default{
   },
 
   methods:{
-    async get_genericas(){
+    async get_programas(){
         try {
             let datos=await axios.get(url+'genericas')
             this.ds_gen= await datos.data;

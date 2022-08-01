@@ -138,8 +138,8 @@ module.exports = configure(function (ctx) {
       },
 
       manifest: {
-        name: `Quasar App`,
-        short_name: `Quasar App`,
+        name: `Ejecución 2022`,
+        short_name: `Ejecución 2022`,
         description: `A Quasar Framework app`,
         display: 'standalone',
         orientation: 'portrait',
